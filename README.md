@@ -28,3 +28,18 @@ python -m streamlit run main_page.py
 This will open a new tab with a local host and display your streamlit code.
 
 Note: You do not have to restart the local host every time you add something new, you can save your file and rerun the page to update your screen
+
+
+Deploying with Docker
+
+Build image:
+
+```
+docker build -t streamlitapp:latest -f docker/Dockerfile .
+```
+
+Run cointainer with image:
+
+```
+docker run -p 8501:8501 streamlitapp:latest
+```
