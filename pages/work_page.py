@@ -22,11 +22,7 @@ if show_data:
 
 
 # Create a slider that allows the user to choose a range between two years from our movie dataset
-x = st.slider("View years", 1950, 2022, (1980, 2000), 1)
-def get_data_sorted_by_year():
-    return df.sort_values("year",ascending=False) 
-df_sorted_by_year = get_data_sorted_by_year()
-st.write(df_sorted_by_year.head(x[0]))
+min_year, max_year = st.slider('Year', value=(2000,2010), min_value=1950, max_value=2020)
 
 # start_color, end_color = st.select_slider(
 #      'Select a range of color wavelength',
